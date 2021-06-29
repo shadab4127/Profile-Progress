@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Questionnaire">
+    <aura:attribute name="recordId" type="Id" description="Id of record on which this component is hosted." />
+    <aura:attribute name="sObjectName" type="String" default="User" description="API name of record on which this component is hosted." />
+    <aura:attribute name="perText" type="String" default="0%" description="Text to display inside circle. It is auto calculated field and used internally." />
+    <aura:attribute name="cirDeg" type="String" default="0" description="Degree of Progress to show. It is auto calculated field and used internally." />
+    <aura:attribute name="theme" type="String" default="Green" description="Theme of Circular Progress Bar. Possible values are blue, green, orange." access="global"/>
+    <aura:attribute name="size" type="String" default="Small" description="Size of Circular Progress Bar. Possible values are small, medium." access="global"/>
+    <aura:attribute name="pertextint" type="Integer"  description="This is used to get integer value of perText." />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="Result" type="c:Result"/>
+    <div class="slds-box" >
+    <div class="clearFloats slds-grid slds-wrap">
+        <div class="slds-col size_6-of-12 profileFont">
+           <p ><lightning:icon iconName="custom:custom11" title="Profile Progress" />
+               Profile Progress
+           </p>
+        </div>
+        <div class="slds-col size_6-of-12" onclick="{!c.questionsDetails}" title="Click to complete the profile">
+        <c:CircularBar perTexts= "{!v.perText}" cirDeg= "{! v.cirDeg}" theme="{!v.theme}" size= "{!v.size}"/>
+        </div>
+    </div> 
+</div>
+</aura:component>

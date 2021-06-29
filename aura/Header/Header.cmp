@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Questionnaire">
+    <aura:attribute name="Get_Result" type="String" />
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    <aura:handler event="c:Result" action="{!c.upadtePercentage}"/>
+    <aura:if isTrue="{!v.Get_Result>0}">
+        <div class="" title="Profile Progress"><p>{!v.Get_Result}%</p></div>
+        <aura:set attribute="else">
+        <div class=""><p></p></div>
+        </aura:set>
+      </aura:if> 
+</aura:component>

@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Questionnaire">
+   <aura:attribute name="recordId" type="Id" description="Id of record on which this component is hosted." />
+   <aura:attribute name="sObjectName" type="String" default="User" description="API name of record on which this component is hosted." />
+   <aura:attribute name="perTexts" type="String" default="0%" description="Text to display inside circle. It is auto calculated field and used internally." />
+   <aura:attribute name="perText" type="String" default="0%" description="Text to display inside circle. It is auto calculated field and used internally." />
+   <aura:attribute name="cirDeg" type="String" default="0" description="Degree of Progress to show. It is auto calculated field and used internally." />
+   <aura:attribute name="theme" type="String" default="Green" access="global" description="Theme of Circular Progress Bar. Possible values are blue, green, orange." />
+   <aura:attribute name="size" type="String" default="Small" access="global" description="Size of Circular Progress Bar. Possible values are Small, Medium." />
+   <aura:attribute name="backgroundColor" type="String" default="#ffffff" access="global"/>
+   <aura:attribute name="boxPadding" type="Boolean" default="true" access="global"/>
+   <aura:attribute name="isVisible" type="Boolean" default="false" />
+   <aura:attribute name="buttoncolor" type="String" default="Neutral" access="global"/>
+   <aura:attribute name="textColor" type="String" default="#e81717" access="global"/>
+   <aura:handler name="change" value="{!v.boxPadding}" action="{!c.padding}"/>
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   <aura:handler name="regInChild" event="c:CompEvent" action="{!c.doHandleFromChild}"/>
+   <aura:registerEvent name="Result" type="c:Result"/>
+   <aura:if isTrue="{!v.perText!='100%'}">
+      <div aura:id="hwDiv" class="slds-m-around_x-small">
+         <div class="slds-grid slds-wrap slds-container_medium slds-align_absolute-center slds-grid_vertical-align-center slds-card slds-p-around_x-small" style="{!'background:'+v.backgroundColor}">
+            <div class="slds-col slds-size_9-of-12">
+               <c:Questionnairecmp valueofbuttoncolor="{!v.buttoncolor}" valueofquestioncolor="{!v.textColor}"/>
+            </div>
+            <div class="slds-col slds-size_3-of-12">
+               <div class="slds-grid slds-p-left_large">
+                  <div class="slds-col">
+                     <c:CircularBar perTexts= "{!v.perTexts}" cirDeg= "{! v.cirDeg}" theme="{!v.theme}" size= "{!v.size}"/>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </aura:if>
+       <aura:if isTrue="{!v.isVisible}">
+         	<div class="slds-grid slds-wrap firstDiv slds-align_absolute-center slds-grid_vertical-align-center">
+           		
+           	</div>
+   </aura:if>
+</aura:component>

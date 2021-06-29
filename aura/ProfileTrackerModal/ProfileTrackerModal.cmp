@@ -1,0 +1,40 @@
+<aura:component controller="ProfileModalController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   <aura:attribute name="istruthy" type="boolean" default="true"/>
+   <aura:attribute name="isType" type="string" default="text"/>
+   <aura:attribute name="parent" type="Aura.Component" />
+   <aura:attribute name="Question" type="string"/>
+   <aura:attribute name="objects" type="String"/>
+   <aura:attribute name="fields" type="String"/>
+   <aura:attribute name="fieldvalue" type="String"/>
+   <aura:attribute name="fieldvalue1" type="String"/>
+   <aura:attribute name="Save" type="Boolean"/>
+   <aura:attribute name="ques" type="String" default=""/>
+   <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+   <section role="dialog" tabindex="-1" aria-label="Meaningful description of the modal content" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+         <header class="slds-modal__header slds-modal__header_empty">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick="{!c.doClose}" title="Close">
+               <lightning:icon iconName="utility:close"  alternativeText="Close" variant="inverse" size="x-small"/>
+               <span class="slds-assistive-text">Close</span>
+            </button>
+         </header>
+         <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <div class="slds-card">
+               <div class="slds-p-around_medium"> 
+                  <div class=" slds-p-horizontal_small slds-text-heading_medium slds-text-align_center">{!v.Question}</div>
+                  <div class="slds-card">
+                     <div class="slds-p-around_medium">
+                        <lightning:input type="{!v.isType}" aura:id="form1" value="{!v.fieldvalue1}" autocomplete="off"/>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick="{!c.doClose}">Cancel</button>
+            <button class="slds-button slds-button_brand" onclick="{!c.saveRecord}">Save</button>
+         </footer>
+      </div>
+   </section>
+   <div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

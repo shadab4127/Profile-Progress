@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Category</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Categories</value>
+    </caseValues>
+    <fields>
+        <help><!-- The name of Recoginization Badge --></help>
+        <label><!-- Badge Name --></label>
+        <name>Badge_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum value to show badges on the basis of progress. It can be added from 0 - 100 --></help>
+        <label><!-- Maximum Range --></label>
+        <name>Maximum_Range__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minumum value to show badges on the basis of progress. It can be added from 0 - 100 --></help>
+        <label><!-- Minimum Range --></label>
+        <name>Minimum_Range__c</name>
+    </fields>
+    <layouts>
+        <layout>Category Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

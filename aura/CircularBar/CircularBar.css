@@ -1,0 +1,55 @@
+.THIS .container .slice,
+.THIS .container.p50plus .slice {
+    clip: rect(auto, auto, auto, auto);
+}
+
+.THIS .container .slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0em, 1em, 1em, 0.5em);
+}
+
+.THIS .fill,
+.THIS .container.p50plus .fill {
+    position: absolute;
+    border: 0.08em solid #307bbb;
+    width: 0.84em;
+    height: 0.84em;
+    clip: rect(0em, 0.5em, 1em, 0em);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.THIS .pie-fill,
+.THIS .container.p50plus .bar:after,
+.THIS .container.p50plus .fill {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.THIS .container.blue .bar,
+.THIS .container.blue .fill {
+    border-color: #307bbb !important;
+}
+
+.THIS .container.green .bar,
+.THIS .container.green .fill {
+    border-color: #4db53c !important;
+}
+
+.THIS .container.orange .bar,
+.THIS .container.orange .fill {
+    border-color: #dd9d22 !important;
+}

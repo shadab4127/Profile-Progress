@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Progress Bar Question</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Progress Bar Questions</value>
+    </caseValues>
+    <fields>
+        <help><!-- This field will have the name of the field to which the question is related. --></help>
+        <label><!-- Field Api Name --></label>
+        <name>Field_Api_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will have the name of the object to which the question is related. --></help>
+        <label><!-- Object Name --></label>
+        <name>Object_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The question will display for progress bar. --></help>
+        <label><!-- Question --></label>
+        <name>Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field determines the weightage of question. --></help>
+        <label><!-- Weightage --></label>
+        <name>Weightage__c</name>
+    </fields>
+    <layouts>
+        <layout>Progress Bar Question Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The field entered is not supported by Profile Progress Bar. --></errorMessage>
+        <name>Entry_of_reference_field_and_address</name>
+    </validationRules>
+</CustomObjectTranslation>

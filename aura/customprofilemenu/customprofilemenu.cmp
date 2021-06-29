@@ -1,0 +1,57 @@
+<aura:component implements="forceCommunity:profileMenuInterface" access="global" controller="Customprofilemenu">
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    <aura:attribute name="userInfo" type="user"/>
+	 <aura:attribute name="options" type="list" />
+    <aura:attribute name="Home" type="String" Default="Home" access="global"/>
+    <aura:attribute name="logout" type="String" Default="Logout" access="global"/>
+    <aura:attribute name="MyProfileLabel" type="String" default="My Profile" access="global"/>
+    <aura:attribute name="UserSetting" type="Boolean" access="global"/>
+    <aura:attribute name="MySetting" type="String" default="My Settings" access="global"/>
+    <aura:attribute name="MyMessages" type="Boolean" />
+    <aura:attribute name="WorkspacesLabel" type="String" default="Experience Workspaces" access="global"/>
+    <div class="slds-grid slds-wrap" >
+      <div class="slds-size_5-of-12">
+         <div class="slds-text-align_center ">
+            <lightning:icon iconName="standard:avatar" size="xxx-medium"/> 
+         </div>
+      </div>
+      <div class="slds-size_4-of-12">
+         <div class="slds-form-element">
+            <div class="slds-form-element__control">
+               <div class="slds-combobox_container">
+                   <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"  aura:id="ddId" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                       <div class="slds-combobox__form-element users" role="none">
+                           <a onclick="{!c.toggleVisibility}" onblur="{!c.blurtoggleVisibility}">
+                               <div class="slds-text-align_center">
+                                   {!v.userInfo.FirstName} 
+                               </div>
+                           </a> 
+                        <div class="slds-dropdown slds-dropdown_fluid" role="listbox">
+                           <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                               <aura:iteration items="{!v.options}" var="itemLabel">
+                                   <li role="presentation" id="{!itemLabel}" onclick="{!c.handleClick}">                            
+                                    <div class="options slds-media slds-listbox__option slds-listbox__option_plain slds-media_xxx-small" role="option">
+                                         <span class="slds-truncate" title="Label">{!itemLabel}</span>
+                                   </div>
+                                   </li>
+                               </aura:iteration>
+                           </ul>
+                       </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="slds-size_2-of-12">
+         <div class="slds-text-align_center">
+         <lightning:icon iconName="utility:down" variant="inverse" size="xx-small" />  
+         </div>
+       </div>
+       <div class="slds-size_1-of-12">
+         <div class="slds-text-align_center slds-p-right_x-small">
+           <c:Header/>
+         </div>
+       </div>
+    </div>
+</aura:component>

@@ -1,0 +1,4 @@
+<design:component>    
+    <design:attribute name="theme" label="Theme" Datasource="Green, Blue, Orange" description="Color theme of the component." />
+    <design:attribute name="size" label="Size" datasource="Small, Medium" description="Size of the of the component" />
+</design:component>

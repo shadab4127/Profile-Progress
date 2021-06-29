@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:registerEvent name="Result" type="c:TestingEvent"/>
+    <lightning:card title="Component A">
+        <div class="slds-p-left_small">
+    	<lightning:button label="Click A" variant="brand" onclick="{!c.buttonAClicked}"></lightning:button>
+        </div>
+    </lightning:card>
+</aura:component>

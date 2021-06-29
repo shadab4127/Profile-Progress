@@ -1,0 +1,9 @@
+<design:component>
+    <design:attribute name="Home" label="Home Label" />
+    <design:attribute name="MyProfileLabel" label="My Profile Label" />
+    <design:attribute name="UserSetting" label="Include User Setting" description="User Settings Label is visible when Include User Setting is true." />
+    <design:attribute name="MySetting" label="User Settings Label" />
+    <design:attribute name="MyMessages" label="Include my messages" />
+    <design:attribute name="WorkspacesLabel" label="Experience Workspaces Label" />
+    <design:attribute name="logout" label="Logout" />
+</design:component>

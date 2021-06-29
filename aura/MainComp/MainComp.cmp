@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler event="c:TestingEvent" action="{!c.handleEvents}"/>
+    <aura:attribute name="message" type="String"/>
+    <lightning:card title="Main Component">
+        <div class="slds-p-left_large">
+            <h1>{!v.message} : event is fired.</h1>
+        </div>
+    </lightning:card>
+</aura:component>

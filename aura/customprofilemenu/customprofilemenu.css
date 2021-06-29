@@ -1,0 +1,14 @@
+.THIS .users a {
+ 	white-space: nowrap; 
+    overflow: hidden;    
+    text-shadow: 2px -1px 4px #7a7979, -0.5px 0px 2px black;
+    font-size:10.5625px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform:uppercase;
+    font-family: 'Montserrat';
+}
+.THIS .options{
+      height: 44px;
+      line-height: 28px;
+}
